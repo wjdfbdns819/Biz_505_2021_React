@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 30vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  width: 100vw;
+  background-image: url("./images/header_background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+
+  text-shadow: 2px 2px 2px black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+section.main_section {
+  flex: 1;
+  width: 95%;
+  margin: 10px auto;
+  border: 1px solid blue;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 0.7rem;
+}
+
+table.rem_list {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.rem_list tr:nth-of-type(odd) {
+  background-color: #ddd;
+}
+table.rem_list tr:nth-of-type(even) {
+  background-color: #eee;
+}
+
+table.rem_list th,
+table.rem_list td {
+  padding: 8px;
+  cursor: pointer;
+}
+
+table.rem_list tr:last-child {
+  font-weight: bold;
+  color: blue;
+}
+
+table.rem_list tr.comp {
+  text-decoration-line: line-through;
+}
+
+input[name="r_remember"] {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin: 0;
+}
