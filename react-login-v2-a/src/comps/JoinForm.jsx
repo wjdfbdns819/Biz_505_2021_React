@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../css/JoinForm.css";
+import { fetchJoin } from "../modules/fetchMoule";
+import { useHistory } from "react-router-dom"
 
 function JoinForm () {
 
@@ -11,6 +13,8 @@ function JoinForm () {
 		email: "",
 
 	});
+
+	const history = useHistory();
 
 		// 회원가입 input에 사용할 event 함수
 	const onChangeAccount = (e) => {
@@ -60,28 +64,10 @@ function JoinForm () {
 						userid : joinUser.userid,
 						password : joinUser.password,
 						email : joinUser.email
-					}
+					};
 
-			/* React 와 Nodejs 간에 데이터를 주고 받기 위해 하는 함수 */
-			// React에서 입력한 데이터를 Nodejs(서버)로 보내기
-			const response = await fetch("http://localhost:8080/users/join",
-
-			{
-				// json 방식으로 데이터 보내기
-				method : "POST",
-				headers : {
-					"Content-Type" : "application/json"
-				},
-				// 문자열로 변환하여 json 타입으로 저장?쨌든 담는다
-				body : JSON.stringify(joinData),
-			})
-
-		// Nodejs에서 데이터를 성공적으로 받았을 때 실행할 코드
-		if(response.ok) {
-				const json = await response.json();
-				alert(JSON.stringify(json));
-			}
-
+					fetchJoin(joinData);
+					history.replace("/login");
 		};
 
 	

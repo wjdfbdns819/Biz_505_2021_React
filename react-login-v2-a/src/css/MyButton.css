@@ -1,0 +1,17 @@
+button.myButton {
+	font-size: 18px;
+	font-weight: 700;
+	width: 60%;
+
+	/*height와 line-height 부분을 똑같은 값으로 설정하면 text가 중앙에 위치한다*/
+	height: 50px;
+	line-height: 50px;
+
+	margin: 10px auto;
+	cursor: pointer;
+	text-align: center;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	background-color: blue;
+}
